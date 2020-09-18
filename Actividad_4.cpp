@@ -26,8 +26,11 @@ void mostrar(int n,char arreglo[])
 main()
 {
 	int op,n;
-	char arreglo[50];
+	char r,arreglo[50];
+
 	
+	do
+	{
 	printf("Elige la opccion que quieres:\n"
 			"1.-Capturar numeros e imprimir suma y promedio\n"
 			"2.-Capturar un arreglo e imprimirlo n veces\n"
@@ -47,8 +50,21 @@ main()
 			printf("Escribe la cantidad de veces que lo quieres repetir: \n");
 			scanf("%i",&n);
 			mostrar(n,arreglo);
-		break;	
+		break;
+		
+		case 3: 
+		break;
+		
+		case 4: 
+		break;
+		
+		default: printf("\nLa funcion no existe");  	
 	}
+	
+	printf("Quieres repetir el programa: \ns=si\n n=no\n");
+	scanf("%s",&r);
+	}
+	while(r=='S' || r=='s'||op==4);
 	
 	return 0;		
 }
