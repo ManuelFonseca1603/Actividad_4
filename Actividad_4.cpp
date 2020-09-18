@@ -1,6 +1,6 @@
-#include"stdio.h"
-#include"stdlib.h"
-
+#include<stdio.h>
+#include<stdlib.h>
+#include"personaje.h"
 
 void capturar(){
 	int i,numeros[5];
@@ -16,8 +16,7 @@ void capturar(){
 	printf("La suma es: %.2f\nEl promedio es: %.2f\n",s,s/5);
 }
 
-void mostrar(int n,char arreglo[])
-{
+void mostrar(int n,char arreglo[]){
 	int i;
 	for(i=0;i<n;i++)
 	printf(" %s\n",arreglo);
@@ -31,11 +30,13 @@ main()
 	
 	do
 	{
+	system("cls");	
 	printf("Elige la opccion que quieres:\n"
 			"1.-Capturar numeros e imprimir suma y promedio\n"
 			"2.-Capturar un arreglo e imprimirlo n veces\n"
 			"3.-Crear personaje\n"
-			"4.-salir\n");
+			"4.-Mostrar personaje\n"
+			"5.-salir\n");
 	scanf("%i",&op);
 	
 	switch(op)
@@ -53,18 +54,24 @@ main()
 		break;
 		
 		case 3: 
+			capturar_personajes();
 		break;
 		
-		case 4: 
+		case 4:
+			mostrar_personajes();
+		break;
+			
+		case 5: 
 		break;
 		
 		default: printf("\nLa funcion no existe");  	
 	}
 	
-	printf("Quieres repetir el programa: \ns=si\n n=no\n");
+	printf("\n\nQuieres repetir el programa: \ns=si\n n=no\n");
 	scanf("%s",&r);
 	}
-	while(r=='S' || r=='s'||op==4);
+	while(r=='S' || r=='s');
+	
 	
 	return 0;		
 }
