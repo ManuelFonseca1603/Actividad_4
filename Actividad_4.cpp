@@ -1,4 +1,6 @@
 #include"stdio.h"
+#include"stdlib.h"
+
 
 void capturar(){
 	int i,numeros[5];
@@ -14,9 +16,17 @@ void capturar(){
 	printf("La suma es: %.2f\nEl promedio es: %.2f\n",s,s/5);
 }
 
+void mostrar(int n,char arreglo[])
+{
+	int i;
+	for(i=0;i<n;i++)
+	printf(" %s\n",arreglo);
+}
+
 main()
 {
-	int op;
+	int op,n;
+	char arreglo[50];
 	
 	printf("Elige la opccion que quieres:\n"
 			"1.-Capturar numeros e imprimir suma y promedio\n"
@@ -30,6 +40,13 @@ main()
 		case 1:
 			printf("Escribe los numeros: \n");
 			capturar();
+		break;
+		case 2: 
+			printf("Escribe la frace que quieres: \n");
+			fflush(stdin);gets(arreglo);
+			printf("Escribe la cantidad de veces que lo quieres repetir: \n");
+			scanf("%i",&n);
+			mostrar(n,arreglo);
 		break;	
 	}
 	
